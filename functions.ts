@@ -24,3 +24,7 @@ function getName(firstName: string, lastName: string): string {
 }
 
 console.log(getName('Mark'));
+
+function myVoid(): void {
+    return 
+}
