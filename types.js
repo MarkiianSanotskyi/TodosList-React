@@ -1,2 +1,12 @@
-function bla() {
-}
+var myString;
+var myNum;
+var myBool;
+var myVar;
+myString = 'Hello'.slice(0, 3);
+myNum = 1;
+myBool = true;
+myVar = 5;
+console.log(myString);
+console.log(myNum);
+console.log(myBool);
+console.log(myVar);
