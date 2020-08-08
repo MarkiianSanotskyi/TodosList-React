@@ -2,9 +2,9 @@ import React from 'react'
 
 function Footer() {
     return ( 
-        <header style={footerStyle}>
+        <footer style={footerStyle}>
             <h1>Just a footer!</h1>
-        </header>
+        </footer>
     )
 }
 
