@@ -40,7 +40,8 @@ function combine(input1, input2) {
     }
     return result;
 }
-var combineAges = combine(30, 26);
+var combineAges = combine(30, 26, 'as-number');
 console.log(combineAges);
-var combineNames = combine('Mark', 'Anna');
+var combinedStringAges = combine('30', '26', 'as-number');
+var combineNames = combine('Mark', 'Anna', 'as-text');
 console.log(combineNames);
