@@ -1,52 +1,53 @@
 /*
-const ADMIN = 0;
-const READ_ONLY = 1;
-const AUTHOR = 2;
-*/
-
-/*
-enum Role { ADMIN, READ_ONLY, AUTHOR };
-
-const person = {
-    name: 'Mark',
-    age: 28,
-    hobbies: ['Sports', 'Cooking'],
-    role: Role.ADMIN,
-};
-
-//person.role = [0, 'admin', 'user'];
+type Combinable = number | string;
+type ConversionDescriptor = 'as-number' | 'as-text';
 
 
-let favoriteActivities: string[];
-favoriteActivities = ['Sports'];
 
-console.log(person.name);
-
-for (const hobby of person.hobbies) {
-    console.log(hobby.toUpperCase());
-}
-
-if (person.role === Role.ADMIN) {
-    console.log('is admin');
-}
-
-*/
-
-function combine(input1: number | string, input2: number | string,) {
+function combine(
+    input1: Combinable,
+    input2: Combinable,
+    resultConversion: ConversionDescriptor,
+    ) {
     let result;
-    if (typeof input1 === 'number' && input2 === 'number') {
-       result = input1 + input2;
+    if (typeof input1 === 'number' && input2 === 'number' || resultConversion === 'as-number') {
+       result = +input1 + +input2;
     } else {
-        result = input1.toString() + input2.toLocaleString();
+        result = input1.toString() + input2.toString();
     }
-    
-    return result;
+
+ return result;
 }
 
-const combineAges = combine(30, 26, 'as-number');
-console.log(combineAges);
+const combinedAges = combine(30, 26, 'as-number');
+console.log(combinedAges);
 
-const combinedStringAges = combine('30', '26', 'as-number');
+const combinedStringAges = combine('30', '26', 'as-text');
+console.log(combinedStringAges);
 
-const combineNames = combine('Mark', 'Anna', 'as-text');
-console.log(combineNames);
+const combinedNames = combine('Mark', 'Anna', 'as-text');
+console.log(combinedNames);
+
+*/
+
+function add(n1: number, n2: number): number {
+    return n1 + n2;
+}
+
+function printResult(num: number): void {
+    console.log('Result: ' + num);
+}
+
+printResult(add(5, 12));
+
+let combineValues: Function;
+
+combineValues = add;
+combineValues = printResult;
+
+// combineValues = 5;
+
+
+console.log(combineValues(8, 8));
+
+// let someValue: undefined;
